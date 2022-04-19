@@ -13,15 +13,25 @@ export default class EmojiSreen extends Component {
                     <Image style={styles.root_image} source={this.state.image} />
                     <View style={styles.root_listOfImages}>
 
-                        {dataImage.map((item, index) => {
-                            return (
-                                <TouchableOpacity onPress={() => this.setState({ image: item.path })}>
-                                    <Image style={styles.root_listOfImages_image} source={item.path} />
+                        {dataImage.map((item, index) =>
+                        // {
+                        //     return (
+                        //         <TouchableOpacity key={index} onPress={() => this.setState({ image: item.path })}>
+                        //             <Image style={styles.root_listOfImages_image} source={item.path} />
 
-                                </TouchableOpacity>
+                        //         </TouchableOpacity>
 
-                            )
-                        })}
+                        //     )
+                        //     // neu ngoac nhon {} bat buoc phai co return
+                        //     // neu ngoac tron () khoi return
+                        // }
+                        (
+                            <TouchableOpacity key={index} onPress={() => this.setState({ image: item.path })}>
+                                <Image style={styles.root_listOfImages_image} source={item.path} />
+
+                            </TouchableOpacity>
+                        ))
+                        }
                     </View>
                 </View>
             </View>
